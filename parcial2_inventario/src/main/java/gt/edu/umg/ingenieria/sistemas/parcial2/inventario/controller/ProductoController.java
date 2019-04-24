@@ -31,7 +31,7 @@ public class ProductoController {
     }
     
     @PutMapping("/actualizarStock/{id}/{operacion}/{stock}")
-    public ProductoEntity updateStock(@PathVariable(required = true) Long id, @PathVariable(required = true) String operacion, @PathVariable(required = true) Integer stock) {
+    public String updateStock(@PathVariable(required = true) Long id, @PathVariable(required = true) String operacion, @PathVariable(required = true) Integer stock) {
         return this.productoService.updateStock(id, operacion, stock);
     }
     

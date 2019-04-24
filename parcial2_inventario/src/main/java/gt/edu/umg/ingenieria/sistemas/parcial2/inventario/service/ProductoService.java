@@ -54,7 +54,7 @@ public class ProductoService {
     }
     
     
-    public ProductoEntity updateStock(Long id, String operacion,Integer stock) {
+    public String updateStock(Long id, String operacion,Integer stock) {
         
         ProductoEntity producto = this.productoRepository.findById(id).get();
         Integer stockActual=0;
@@ -74,7 +74,9 @@ public class ProductoService {
         }
       
         
-        return this.productoRepository.save(producto);
+        this.productoRepository.save(producto);
+        
+        return "Stock actualizado ["+producto.getName()+" "+ producto.getStock() + "]";
     }
     
 }
