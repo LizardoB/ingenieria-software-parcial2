@@ -6,5 +6,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface CabeceraFacturaRepository extends CrudRepository<CabeceraFacturaEntity, Long> {
-    
+    public CabeceraFacturaEntity findCabeceraByNit(String nit);
 }
